@@ -1,0 +1,2 @@
+# pssqlnav
+Powershell-SQL-Navision
