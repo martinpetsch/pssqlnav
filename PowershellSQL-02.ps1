@@ -50,7 +50,7 @@ $DataSet.Tables[0] | ogv
 
 
 #Change Log per table:
-$SqlQuery = 'SELECT [Table No_], count(*) as ''Tables''  FROM [' + $DB + '].[dbo].[' + $Mandant + '$' + $TABLENAME + '] where [Date and Time] <= ''2050-31-12''AND [Date and Time] >= ''2000-01-01'' group by [Table No_] ' 
+$SqlQuery = 'SELECT [Table No_], count(*) as ''Tables''  FROM [' + $DB + '].[dbo].[' + $Mandant + '$' + $TABLENAME + '] where CAST([Date and Time] as Date) <= ''2050-12-31''AND CAST([Date and Time] as Date) >= ''2000-01-01'' group by [Table No_] ' 
 $SqlCmd.CommandText = $SqlQuery
 $SqlCmd.Connection = $SqlConnection
 $SqlCmd.CommandTimeout=60 #seconds standard=30s, 0=forever
